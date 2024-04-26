@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "storageAccountinfo": {
+        "value": {
+          "kind": "StorageV2",
+          "accesstier": "Cool"
+        }
+      },
+      "sqlDatabaseSku":{
+        "value": {
+            "name": "Standard",
+            "tier": "Standard" 
+        }
+      },
+      "storageaccountSku":{
+        "value": {
+            "name": "Standard_LRS"
+        }
+      },
+      "sqlServerAdministratorLogin": {
+        "reference": {
+            "keyVault": {
+                "id": "/subscriptions/2e457876-308f-47b3-bdff-2245b775eaf8/resourceGroups/rg-waterdrop/providers/Microsoft.KeyVault/vaults/KV-Waterdrop-dev"
+            },
+            "secretName": "sqlServerAdministratorLogin"
+        }
+      },
+      "sqlServerAdministratorPassword": {
+        "reference": {
+            "keyVault": {
+                "id": "/subscriptions/2e457876-308f-47b3-bdff-2245b775eaf8/resourceGroups/rg-waterdrop/providers/Microsoft.KeyVault/vaults/KV-Waterdrop-dev"
+            },
+            "secretName": "sqlServerAdministratorPassword"
+        }
+      }
+    }
+}
+
+    
+ 
+
