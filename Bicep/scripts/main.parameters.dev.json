@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "appServicePlanSku": {
+        "value": {
+          "name": "F1",
+          "tier": "Free"
+        }
+      },
+      "sqlDatabaseSku": {
+        "value": {
+          "name": "Standard",
+          "tier": "Standard"
+        }
+      },
+      "sqlServerAdministratorLogin": {
+        "reference": {
+          "keyVault": {
+            "id": "/subscriptions/2e457876-308f-47b3-bdff-2245b775eaf8/resourceGroups/rg-waterdrop/providers/Microsoft.KeyVault/vaults/KeyVault-Waterdrop"
+          },
+          "secretName": "sqlServerAdministratorLogin"
+        }
+      },
+      "sqlServerAdministratorPassword": {
+        "reference": {
+          "keyVault": {
+            "id": "/subscriptions/2e457876-308f-47b3-bdff-2245b775eaf8/resourceGroups/rg-waterdrop/providers/Microsoft.KeyVault/vaults/KeyVault-Waterdrop"
+          },
+          "secretName": "sqlServerAdministratorPassword"
+        }
+      }
+    }
+  }
+
+  
+ 
+  
